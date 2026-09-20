@@ -1,0 +1,15 @@
+2026-09-10T12:42:13.971+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : Starting Application using Java 21.0.1 with PID 11276 (C:\Users\abhin\Downloads\kafka\02-sb-logging-app\target\classes started by abhin in C:\Users\abhin\Downloads\kafka\02-sb-logging-app)
+2026-09-10T12:42:13.979+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T12:42:14.052+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-10T12:42:14.052+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-10T12:42:15.163+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-09-10T12:42:15.189+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-10T12:42:15.189+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-10T12:42:15.253+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1200 ms
+2026-09-10T12:42:15.699+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-09-10T12:42:15.708+05:30  INFO 11276 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : Started Application in 2.335 seconds (process running for 3.222)
+2026-09-10T12:42:37.820+05:30  INFO 11276 --- [02-sb-logging-app] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-10T12:42:37.820+05:30  INFO 11276 --- [02-sb-logging-app] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-10T12:42:37.822+05:30  INFO 11276 --- [02-sb-logging-app] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-10T12:42:37.886+05:30  INFO 11276 --- [02-sb-logging-app] [http-nio-9090-exec-1] com.example.demo.cx                      : Execution Started
+2026-09-10T12:42:37.886+05:30  INFO 11276 --- [02-sb-logging-app] [http-nio-9090-exec-1] com.example.demo.cx                      : Execution Ended

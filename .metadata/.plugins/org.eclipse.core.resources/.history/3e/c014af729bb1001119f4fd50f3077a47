@@ -1,0 +1,15 @@
+package com.avit.props;
+
+import java.util.Map;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
+import com.avit.serviceimpl.HashMap;
+
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "plan-api")
+public class AppProps 
+{
+	Map<String, String> messages=new HashMap<>();
+}

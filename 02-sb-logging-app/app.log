@@ -1,0 +1,13 @@
+2026-09-12T14:29:46.553+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : Starting Application using Java 21.0.1 with PID 13960 (C:\Users\abhin\Downloads\kafka\02-sb-logging-app\target\classes started by abhin in C:\Users\abhin\Downloads\kafka\02-sb-logging-app)
+2026-09-12T14:29:46.561+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : No active profile set, falling back to 1 default profile: "default"
+2026-09-12T14:29:46.652+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-12T14:29:46.653+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-12T14:29:47.773+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-09-12T14:29:47.796+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-12T14:29:47.797+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-12T14:29:47.861+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1206 ms
+2026-09-12T14:29:48.360+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-09-12T14:29:48.369+05:30  INFO 13960 --- [02-sb-logging-app] [restartedMain] com.example.demo.Application             : Started Application in 2.497 seconds (process running for 3.524)
+2026-09-12T14:29:52.907+05:30  INFO 13960 --- [02-sb-logging-app] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-12T14:29:52.913+05:30  INFO 13960 --- [02-sb-logging-app] [RMI TCP Connection(8)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-12T14:29:52.924+05:30  INFO 13960 --- [02-sb-logging-app] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete

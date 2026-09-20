@@ -1,0 +1,27 @@
+# Conversion to YAML from Properties formar report
+# Warnings:
+# - The yaml file had comments which are lost in the refactoring!
+spring:
+  application:
+    name: 02-sb-logging-app-1
+  datasource:
+    url: jdbc:h2:mem:avitdb
+    username: abhi
+    password: abhi
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 9091
+
+plan-api:
+ messages:
+  plan-save-succ: plan saved successfully
+  plan-fail: plan failed to save
+  plan-updated-succ: plan updated successfully
+  plan-updated-fail: plan failed to update
+  plan-deleted-succ: plan deleted successfully
+  plan-deleted-fail: plan failed to delete
+  plan-status-change: plan status changed successfully
+  plan-status-changeFail: plan status change 

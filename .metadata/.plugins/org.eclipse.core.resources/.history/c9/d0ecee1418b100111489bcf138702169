@@ -1,0 +1,5 @@
+package com.avit.configs;
+
+public class SwaggerConfig {
+
+}

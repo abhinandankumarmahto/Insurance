@@ -1,0 +1,85 @@
+package com.avit.controllers;
+import java.util.List;
+import java.util.Map;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import com.avit.entity.Plan;
+import com.avit.services.PlanService;
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+public class PlanController {
+	private final PlanService planService;
+
+	@GetMapping("/categories")
+	public ResponseEntity<Map<Integer, String>> planCategories() {
+		Map<Integer, String> categories = planService.getPlanCatogories();
+		return new ResponseEntity<>(categories, HttpStatus.OK);
+	}
+
+	@PostMapping("/plan")
+	public ResponseEntity<String> savePlan(@RequestBody Plan plan) 
+	{
+		String msg;
+		boolean isSave = planService.savePlan(plan);
+		if (isSave == true)
+			msg = "Plan saved";
+		else
+			msg = "Plan not saved";
+		return new ResponseEntity<>(msg, HttpStatus.CREATED);
+	}
+
+	@GetMapping("/plan")
+	public ResponseEntity<List<Plan>> plans() {
+		List<Plan> allPlan = planService.getAllPlan();
+		return new ResponseEntity<>(allPlan, HttpStatus.OK);
+	}
+
+	@GetMapping("/plan/{planId}")
+	public ResponseEntity<Plan> editPlan(@PathVariable Integer planId) {
+		Plan plan = planService.getPlanById(planId);
+		return new ResponseEntity<Plan>(plan, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/plan/{planId}")
+	public ResponseEntity<String> deletePlan(@PathVariable Integer planId) {
+		String status;
+		boolean isdeleted = planService.deletePlanById(planId);
+		if (isdeleted == true)
+			status = "Plan saved";
+		else
+			status = "Plan not saved";
+		return new ResponseEntity<>(status, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/plan")
+	public ResponseEntity<String> updatePlan(@RequestBody Plan plan) {
+		String status;
+		boolean isUpdated = planService.UpdatePlan(plan);
+		if (isUpdated == true)
+			status = "Plan updated";
+		else
+			status = "Plan not updated";
+		return new ResponseEntity<String>(status, HttpStatus.OK);
+	}
+
+	@PutMapping("/status-changed/{planId}/{status}")
+	public ResponseEntity<String> statusChange(@PathVariable Integer planId, @PathVariable String status) {
+		String msg = "";
+		boolean planStatusChange = planService.planStatusChange(planId, status);
+		if (planStatusChange)
+			msg = "Status Changed ";
+		else
+			msg = "Status is not changed";
+		return new ResponseEntity<String>(msg, HttpStatus.OK);
+	}
+
+}

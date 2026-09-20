@@ -1,0 +1,83 @@
+package com.avit.serviceimpl;
+import java.util.*;
+import java.util.HashMap;
+import org.springframework.stereotype.Service;
+import com.avit.entity.Plan;
+import com.avit.entity.PlanCatagory;
+import com.avit.repositories.PlanCatogoriesRepo;
+import com.avit.repositories.PlanRepo;
+import com.avit.services.PlanService;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PlanServiceImpl implements PlanService {
+	private final PlanRepo planRepo;
+	private final PlanCatogoriesRepo planCatogoriesRepo;
+
+	@Override
+	public Map<Integer, String> getPlanCatogories() {
+		Map<Integer, String> categoryMap = new HashMap<>();
+		List<PlanCatagory> catogories = planCatogoriesRepo.findAll();
+		catogories.forEach(category -> {
+			categoryMap.put(category.getCategoryId(), category.getCategoryName());
+		});
+		return categoryMap;
+	}
+
+	@Override
+	public boolean savePlan(Plan plan) {
+		Plan saved = planRepo.save(plan);
+		return saved.getPlanId() != null;
+	}
+
+	@Override
+	public List<Plan> getAllPlan() {
+		return planRepo.findAll();
+	}
+
+	@Override
+	public Plan getPlanById(Integer PlanId) {
+		Optional<Plan> byId = planRepo.findById(PlanId);
+		if (byId.isPresent())
+			return byId.get();
+		return null;
+	}
+
+	@Override
+	public boolean UpdatePlan(Plan plan) {
+		planRepo.save(plan);
+		return plan.getPlanId() != null;
+	}
+
+	@Override
+	public boolean deletePlanById(Integer PlanId)
+
+	{
+		boolean status = false;
+
+		try {
+			planRepo.deleteById(PlanId);
+			status = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public boolean planStatusChange(Integer PlanId, String status) 
+	{
+		Optional<Plan> findById = planRepo.findById(PlanId);
+		{
+			if(findById.isPresent()) {
+				Plan plan = findById.get();
+				plan.setActiveSw(status);
+				planRepo.save(plan);
+				return true;
+			}
+								 }
+		return false;
+	}
+
+}

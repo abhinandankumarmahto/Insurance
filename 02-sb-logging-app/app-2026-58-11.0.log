@@ -1,0 +1,3 @@
+2026-09-11T09:58:21.722+05:30  INFO 12728 --- [02-sb-logging-app] [main] com.example.demo.ApplicationTests        : Starting ApplicationTests using Java 21.0.1 with PID 12728 (started by abhin in C:\Users\abhin\Downloads\kafka\02-sb-logging-app)
+2026-09-11T09:58:21.792+05:30  INFO 12728 --- [02-sb-logging-app] [main] com.example.demo.ApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2026-09-11T09:58:23.359+05:30  INFO 12728 --- [02-sb-logging-app] [main] com.example.demo.ApplicationTests        : Started ApplicationTests in 2.226 seconds (process running for 3.892)
