@@ -7,13 +7,13 @@ import com.avit.request.SearchRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-public interface EligibilityService 
+public interface ReportService 
 {
 	public List<String> getUniquePlanName();
 	public List<String> getUniquePlanStatus();
 	public List<SearchResponse> search(SearchRequest request);
-	public void generateExcel(HttpServletResponse response);
-	public void generatePdf(HttpServletResponse response);
+	public void generateExcel(HttpServletResponse response) throws Exception;
+	public void generatePdf(HttpServletResponse response) throws Exception;
 	
 	
 }
