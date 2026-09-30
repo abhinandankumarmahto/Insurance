@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserMasterService {
 		StringBuilder builder = new StringBuilder();
 		String string ="";
 		try {
-			FileReader file = new FileReader("REG_EMAIL_BODY.txt");
+			FileReader file = new FileReader("FORGOT_PASSWORD.txt");
 			BufferedReader br = new BufferedReader(file);
 			String line = br.readLine();
 			while(line==null)
@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserMasterService {
 				builder.append(line);
 				line=br.readLine();
 			}
+			br.close();
 			string = builder.toString();
 			string.replace("{FULLNAME}", fullname);
 			string.replace("{PSWD}", password);
@@ -80,15 +81,18 @@ public class UserServiceImpl implements UserMasterService {
 			BufferedReader buffer = new BufferedReader(reader);
 
 			String line = buffer.readLine();
-			while (line == null) {
+			while (line != null) 
+			{
 				stringBuffer.append(line);
 				line = buffer.readLine();
-				mailBody = buffer.toString();
-				mailBody.replace("{FULLNAME}", fullname);
-				mailBody.replace("{{TEMP_PSWD}", tempPwd);
-				mailBody.replace("{URL}", url);
+				
 			}
 			buffer.close();
+			mailBody = stringBuffer.toString();
+			mailBody.replace("FULLNAME", fullname);
+			mailBody.replace("{TEMP_PSWD", tempPwd);
+			mailBody.replace("URL", url);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,7 +102,8 @@ public class UserServiceImpl implements UserMasterService {
 	}
 
 	@Override
-	public boolean saveUser(User user) {
+	public boolean saveUser(User user) 
+	{
 		UserMaster entity = new UserMaster();
 		BeanUtils.copyProperties(user, entity);
 
@@ -109,7 +114,7 @@ public class UserServiceImpl implements UserMasterService {
 		String subject = "Your Registration successfully";
 		String body = readRegMailBody(entity.getFullname(), entity.getPassword());
 
-		mail.sendMail(user.getEmail(), subject, body);
+		mail.sendMail(user.getEmail(),subject, body);
 		return save.getUserId() != null;
 	}
 
